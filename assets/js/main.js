@@ -25,16 +25,8 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(el);
     });
 
-    // Efecto de parallax suave en el hero
-    window.addEventListener('scroll', function () {
-        const scrolled = window.pageYOffset;
-        const hero = document.querySelector('.hero');
-        const heroContent = document.querySelector('.hero-content');
-
-        if (hero && heroContent) {
-            heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-        }
-    });
+    // Efecto de parallax desactivado para evitar problemas de superposición
+    // El hero permanece estático para mejor experiencia de usuario
 
     // Smooth scrolling para enlaces internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
