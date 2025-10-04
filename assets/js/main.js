@@ -241,3 +241,70 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('🚀 J&L Representaciones - Sitio web cargado correctamente');
 });
 
+// Función para copiar al portapapeles
+function copyToClipboard(text, button) {
+    // Usar la API moderna del portapapeles
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+            // Cambiar el ícono temporalmente para indicar éxito
+            const originalContent = button.innerHTML;
+            button.innerHTML = '✅';
+            button.classList.add('copied');
+            
+            // Mostrar notificación
+            if (window.JLUtils) {
+                window.JLUtils.showNotification('¡Copiado al portapapeles!', 'success');
+            }
+            
+            // Restaurar el ícono después de 2 segundos
+            setTimeout(function() {
+                button.innerHTML = originalContent;
+                button.classList.remove('copied');
+            }, 2000);
+        }).catch(function(err) {
+            console.error('Error al copiar:', err);
+            fallbackCopyToClipboard(text, button);
+        });
+    } else {
+        // Fallback para navegadores antiguos
+        fallbackCopyToClipboard(text, button);
+    }
+}
+
+// Función de respaldo para copiar (navegadores antiguos)
+function fallbackCopyToClipboard(text, button) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-999999px';
+    textArea.style.top = '-999999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+            const originalContent = button.innerHTML;
+            button.innerHTML = '✅';
+            button.classList.add('copied');
+            
+            if (window.JLUtils) {
+                window.JLUtils.showNotification('¡Copiado al portapapeles!', 'success');
+            }
+            
+            setTimeout(function() {
+                button.innerHTML = originalContent;
+                button.classList.remove('copied');
+            }, 2000);
+        }
+    } catch (err) {
+        console.error('Error al copiar:', err);
+        if (window.JLUtils) {
+            window.JLUtils.showNotification('No se pudo copiar. Intenta seleccionar manualmente.', 'error');
+        }
+    }
+    
+    document.body.removeChild(textArea);
+}
+

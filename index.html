@@ -109,39 +109,101 @@
             </div>
 
             <div class="contact-grid">
-                <a href="https://maps.app.goo.gl/9EFfoLmBxCeJjFMi7" target="_blank" rel="noopener noreferrer" class="contact-card contact-card-link">
+                <div class="contact-card">
                     <span class="contact-icon">📍</span>
                     <div class="contact-label">Dirección</div>
-                    <div class="contact-info">MITRE 274 OF.4</div>
-                    <div class="contact-detail">Salta Capital</div>
-                    <div class="contact-detail" style="margin-top: 0.8rem; color: #10b981; font-weight: 600;">
-                        📱 Ver en Google Maps
+                    <div class="contact-item">
+                        <div class="contact-info">MITRE 274 OF.4</div>
+                        <div class="contact-detail">Salta Capital</div>
+                        <a href="https://maps.app.goo.gl/9EFfoLmBxCeJjFMi7" target="_blank" rel="noopener noreferrer" class="copy-btn-small" style="margin-top: 0.5rem;">
+                            📍 Ver en Google Maps
+                        </a>
                     </div>
-                </a>
+                </div>
 
                 <div class="contact-card">
                     <span class="contact-icon">🕐</span>
-                    <div class="contact-label">Horarios</div>
-                    <div class="contact-info">Lunes a Viernes: 9 a 14 hs</div>
-                    <div class="contact-detail">Lun, Mié y Vie: 18 a 21 hs</div>
+                    <div class="contact-label">Horarios de Oficina Presencial</div>
+                    <div class="schedule-container">
+                        <div class="schedule-item">
+                            <span class="schedule-day">Lunes</span>
+                            <span class="schedule-time">9:00 - 15:00 hs</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="schedule-day">Martes</span>
+                            <span class="schedule-time">9:00 - 15:00 hs</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="schedule-day">Miércoles</span>
+                            <span class="schedule-time">9:00 - 15:00 hs</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="schedule-day">Jueves</span>
+                            <span class="schedule-time">9:00 - 15:00 hs</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="schedule-day">Viernes</span>
+                            <span class="schedule-time">9:00 - 15:00 hs</span>
+                        </div>
+                        <div class="schedule-item schedule-closed">
+                            <span class="schedule-day">Sábado</span>
+                            <span class="schedule-time">Cerrado</span>
+                        </div>
+                        <div class="schedule-item schedule-closed">
+                            <span class="schedule-day">Domingo</span>
+                            <span class="schedule-time">Cerrado</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="contact-card">
                     <span class="contact-icon">📞</span>
                     <div class="contact-label">Teléfonos</div>
-                    <div class="contact-info">387-5437573</div>
-                    <div class="contact-info" style="margin-top: 0.3rem;">387-4128736</div>
-                    <div class="contact-detail" style="margin-top: 0.5rem;">Lorena - Atención personalizada</div>
+                    <div class="contact-item">
+                        <div class="contact-info">387-5437573</div>
+                        <button class="copy-btn-small" onclick="copyToClipboard('3875437573', this)" title="Copiar teléfono">
+                            📋 Copiar
+                        </button>
+                    </div>
+                    <div class="contact-item" style="margin-top: 0.8rem;">
+                        <div class="contact-info">387-4128736</div>
+                        <button class="copy-btn-small" onclick="copyToClipboard('3874128736', this)" title="Copiar teléfono">
+                            📋 Copiar
+                        </button>
+                    </div>
+                    <div class="contact-detail" style="margin-top: 0.8rem;">Lorena - Atención personalizada</div>
                 </div>
 
                 <div class="contact-card">
                     <span class="contact-icon">✉️</span>
                     <div class="contact-label">Emails</div>
-                    <div class="contact-info" style="font-size: 0.95rem;">jylrepresentaciones@hotmail.com.ar</div>
-                    <div class="contact-detail"
-                        style="font-size: 0.95rem; margin-top: 0.5rem; color: white; font-weight: 600;">
-                        jylrepresentacionescreditos@gmail.com</div>
-                    <div class="contact-detail" style="margin-top: 0.5rem;">Contactos</div>
+                    <div class="contact-item">
+                        <div class="contact-info" style="font-size: 0.95rem; word-break: break-all;">
+                            jylrepresentaciones@hotmail.com.ar
+                        </div>
+                        <div class="btn-group-vertical">
+                            <button class="copy-btn-small" onclick="copyToClipboard('jylrepresentaciones@hotmail.com.ar', this)" title="Copiar email">
+                                📋 Copiar
+                            </button>
+                            <a href="mailto:jylrepresentaciones@hotmail.com.ar" class="email-btn-small" title="Enviar email">
+                                📧 Enviar
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-item" style="margin-top: 0.8rem;">
+                        <div class="contact-info" style="font-size: 0.95rem; color: white; font-weight: 600; word-break: break-all;">
+                            jylrepresentacionescreditos@gmail.com
+                        </div>
+                        <div class="btn-group-vertical">
+                            <button class="copy-btn-small" onclick="copyToClipboard('jylrepresentacionescreditos@gmail.com', this)" title="Copiar email">
+                                📋 Copiar
+                            </button>
+                            <a href="mailto:jylrepresentacionescreditos@gmail.com" class="email-btn-small" title="Enviar email">
+                                📧 Enviar
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-detail" style="margin-top: 0.8rem;">Contactos</div>
                 </div>
             </div>
 
